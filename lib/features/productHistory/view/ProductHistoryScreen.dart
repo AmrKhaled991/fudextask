@@ -1,10 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fudextask/core/globalUtils/App_assets.dart';
-import 'package:fudextask/core/globalUtils/Styles.dart';
+import 'package:fudextask/core/globalModles/CustomTextButtonModels.dart';
+import 'package:fudextask/core/globalModles/DropListModel%20.dart';
 import 'package:fudextask/core/globalWidgets/custom_appbar.dart';
 import 'package:fudextask/core/globalWidgets/custom_floating_action_button.dart';
+import 'package:fudextask/features/addProduct/models/CustomTextButtonModels.dart';
 import 'package:fudextask/features/productHistory/view/widgets/custom_drop_button.dart';
 import 'package:fudextask/features/productHistory/view/widgets/custom_search_bar.dart';
 import 'package:fudextask/features/productHistory/view/widgets/custom_slivers_products_card.dart';
@@ -14,19 +14,22 @@ class ProductHistoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-   var mediaQuery =MediaQuery.of(context);
+    var mediaQuery = MediaQuery.of(context);
     final TextEditingController searchController = TextEditingController();
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: Column(children: [
         CustomAppbar(
-          title: 'سجل المنتجات',
-          callbackAction: () {},
-        ),
+            customAppbarModel: CustomAppbarModel(
+          text: 'سجل المنتجات',
+          callback: () {},
+        )),
         Expanded(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16, ),
+            padding: EdgeInsets.symmetric(
+              horizontal: 16,
+            ),
             child: CustomScrollView(
               slivers: [
                 const SliverToBoxAdapter(
@@ -42,7 +45,7 @@ class ProductHistoryScreen extends StatelessWidget {
                     height: 15,
                   ),
                 ),
-                SliverToBoxAdapter(child: CustomDropButton()),
+                SliverToBoxAdapter(child: CustomDropButton(downTheme: DropDownTheme.ProductHistoryScreen,)),
                 const SliverToBoxAdapter(
                   child: SizedBox(
                     height: 15,
@@ -51,7 +54,7 @@ class ProductHistoryScreen extends StatelessWidget {
                 CustomSliversProductsCard(),
                 const SliverToBoxAdapter(
                   child: SizedBox(
-                    height: 116 ,
+                    height: 116,
                   ),
                 ),
               ],
@@ -61,10 +64,12 @@ class ProductHistoryScreen extends StatelessWidget {
       ]),
       floatingActionButton: Padding(
         padding: EdgeInsets.only(
-    bottom: mediaQuery.viewInsets.bottom -
-             mediaQuery.viewPadding.bottom,
-  ),
-        child: CustomFloatingActionButton(),
+          bottom: mediaQuery.viewInsets.bottom - mediaQuery.viewPadding.bottom,
+        ),
+        child: CustomFloatingActionButton(
+          customTextButtonModels:
+              CustomTextButtonModels(text: 'أضافة منتج', callback: (){}),
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );

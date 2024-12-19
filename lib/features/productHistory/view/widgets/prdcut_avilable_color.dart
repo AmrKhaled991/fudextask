@@ -1,5 +1,9 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
 import 'package:fudextask/constent.dart';
+import 'package:fudextask/core/globalModles/ColorContainerModle.dart';
+import 'package:fudextask/core/globalWidgets/color_container.dart';
 
 class PrdcutAvilableColor extends StatelessWidget {
   const PrdcutAvilableColor({super.key});
@@ -9,17 +13,9 @@ class PrdcutAvilableColor extends StatelessWidget {
     return Row(
       children: List.generate(
           productSizesList.length,
-          (index) => Padding(
-                padding: const EdgeInsets.only(right: 5.0),
-                child: Container(
-                  width:14 ,height: 14,
-                  decoration: BoxDecoration(
-                    color: PRIMARY,
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  padding: EdgeInsets.all(5),
-                ),
-                
+          (index) => ColorContainer(
+                colorContainerModle:
+                    ColorContainerModle(color: PRIMARY, width: 14, hieght: 14),
               )),
     );
   }

@@ -1,11 +1,16 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
 import 'package:flutter/material.dart';
+
 import 'package:fudextask/core/globalWidgets/custom_text_button.dart';
+import 'package:fudextask/features/addProduct/models/CustomTextButtonModels.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
-  const CustomFloatingActionButton({
+    CustomTextButtonModels customTextButtonModels;
+
+   CustomFloatingActionButton({
     super.key,
+    required this.customTextButtonModels,
   });
 
   @override
@@ -17,7 +22,7 @@ class CustomFloatingActionButton extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 24),
       width: double.infinity,
       child: CustomTextButton(
-        text: 'أضافة منتج',
+        customTextButtonModels: customTextButtonModels,
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fudextask/features/addProduct/view/EditProudctScreen.dart';
 import 'package:fudextask/features/productHistory/view/ProductHistoryScreen.dart';
 
 void main() {
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       home: Directionality(
         textDirection: TextDirection.rtl,
-        child: const ProductHistoryScreen()),
+        child:
+         const EditProudctScreen()),
     );
   }
 }

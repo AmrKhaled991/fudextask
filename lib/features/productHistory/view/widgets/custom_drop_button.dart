@@ -1,16 +1,24 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:fudextask/core/globalWidgets/DropListModel%20.dart';
+
+import 'package:fudextask/core/globalModles/DropListModel%20.dart';
+import 'package:fudextask/core/globalModles/SelectDropListModel.dart';
 import 'package:fudextask/core/globalWidgets/SelectDropList%20.dart';
 
 class CustomDropButton extends StatefulWidget {
-  CustomDropButton({super.key});
+  final DropDownTheme downTheme;
+  const CustomDropButton({
+    super.key,
+    required this.downTheme,
+  });
 
   @override
   State<CustomDropButton> createState() => _CustomDropButtonState();
 }
 
 class _CustomDropButtonState extends State<CustomDropButton> {
- final DropListModel dropListModel = DropListModel([
+  DropListModel dropListModel = DropListModel([
+    OptionItem(id: "1", title: "القسم"),
     OptionItem(id: "1", title: "شنط"),
     OptionItem(id: "2", title: "عبايات"),
     OptionItem(id: "2", title: "طرح")
@@ -19,11 +27,14 @@ class _CustomDropButtonState extends State<CustomDropButton> {
   @override
   Widget build(BuildContext context) {
     return SelectDropList(
-      dropListModel.listOptionItems.first,
-      dropListModel,
-      (optionItem) {
-        setState(() {});
-      },
-    );
+        null,
+        SelectDropListModel(
+          onOptionSelected: (optionItem) {
+            setState(() {});
+          },
+          dropDownTheme: widget.downTheme,
+          dropListModel: dropListModel,
+          itemSelected: dropListModel.listOptionItems.first,
+        ));
   }
 }

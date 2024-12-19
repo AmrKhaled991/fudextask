@@ -2,18 +2,17 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fudextask/core/functions/custom_shadow.dart';
+
+import 'package:fudextask/core/globalModles/CustomTextButtonModels.dart';
 import 'package:fudextask/core/globalUtils/App_assets.dart';
 import 'package:fudextask/core/globalUtils/Styles.dart';
 
 class CustomAppbar extends StatelessWidget {
-  final String title;
-  final VoidCallback callbackAction;
-  CustomAppbar({
-    Key? key,
-    required this.title,
-    required this.callbackAction,
-  }) : super(key: key);
+  final CustomAppbarModel customAppbarModel;
+  const CustomAppbar({
+    super.key,
+    required this.customAppbarModel,
+  });
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,10 +33,10 @@ class CustomAppbar extends StatelessWidget {
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             InkWell(
-              onTap: callbackAction,
+              onTap: customAppbarModel.callback,
               child: SvgPicture.asset(Assets.imagesArrowBcack,fit: BoxFit.scaleDown,),
             ),
-            Text('سجل المنتجات',
+            Text(customAppbarModel.text,
                 textAlign: TextAlign.center, style: Styles.textNormal18()),
             const SizedBox(
               width: 45,

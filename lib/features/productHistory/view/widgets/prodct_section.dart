@@ -18,7 +18,7 @@ class ProdctSection extends StatelessWidget {
                 flex: 3,
                  child: Image.asset(
                     Assets.imagesEllipse,
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover ,
                   ),
                ),
               const SizedBox(

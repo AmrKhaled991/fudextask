@@ -1,18 +1,22 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
 import 'package:fudextask/core/functions/custom_shadow.dart';
+import 'package:fudextask/core/globalModles/DropListModel%20.dart';
+import 'package:fudextask/core/globalModles/SelectDropListModel.dart';
 import 'package:fudextask/core/globalUtils/Styles.dart';
-import 'package:fudextask/core/globalWidgets/DropListModel%20.dart';
 
 class SelectDropList extends StatefulWidget {
-  final OptionItem itemSelected;
-  final DropListModel dropListModel;
-  final Function(OptionItem optionItem) onOptionSelected;
+ final SelectDropListModel selectDropListModel;
 
-  SelectDropList(this.itemSelected, this.dropListModel, this.onOptionSelected);
+  const SelectDropList(
+    Key? key,
+    this.selectDropListModel,
+  ) : super(key: key);
 
   @override
   _SelectDropListState createState() =>
-      _SelectDropListState(itemSelected, dropListModel);
+      _SelectDropListState(selectDropListModel.itemSelected, selectDropListModel.dropListModel);
 }
 
 class _SelectDropListState extends State<SelectDropList>
@@ -65,9 +69,13 @@ class _SelectDropListState extends State<SelectDropList>
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 9),
             decoration: BoxDecoration(
-              border: Border.all(width: 1, color: Color(0xFFDBDBDB)),
+              border: Border.all(
+                  width: 1,color: const Color(0xFFDBDBDB)
+              ),
               borderRadius: BorderRadius.circular(20.0),
-              color: Colors.white,
+              color:  widget.selectDropListModel.dropDownTheme == DropDownTheme.ProductHistoryScreen
+                          ? Colors.white
+                          : Color(0xFFF8F8F8),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.max,
@@ -75,14 +83,14 @@ class _SelectDropListState extends State<SelectDropList>
               children: <Widget>[
                 Text(
                   optionItemSelected.title,
-                  style: Styles.textNormal14(),
+                  style:widget.selectDropListModel.dropDownTheme == DropDownTheme.ProductHistoryScreen ?Styles.textNormal14():Styles.textNormalTajawal16(),
                 ),
                 Spacer(),
                 Icon(
                   isShow
-                      ? Icons.keyboard_arrow_up_outlined
-                      : Icons.keyboard_arrow_down_outlined,
-                  size: 30,color: Color(0xFFDBDBDB),
+                      ? Icons.keyboard_arrow_up_rounded
+                      : Icons.keyboard_arrow_down_rounded,
+                  size: 30,
                 ),
               ],
             ),
@@ -98,7 +106,9 @@ class _SelectDropListState extends State<SelectDropList>
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(20),
                       bottomRight: Radius.circular(20)),
-                  color: Colors.white,
+                  color:   widget.selectDropListModel.dropDownTheme == DropDownTheme.ProductHistoryScreen
+                          ? Colors.white
+                          : Color(0xFFF8F8F8),
                   boxShadow: [customShadow()],
                 ),
                 child: _buildDropListOptions(
@@ -110,7 +120,7 @@ class _SelectDropListState extends State<SelectDropList>
 
   Column _buildDropListOptions(List<OptionItem> items, BuildContext context) {
     return Column(
-      children: items.map((item) => _buildSubMenu(item, context)).toList(),
+      children: items.map((item) =>  _buildSubMenu(item, context)).toList(),
     );
   }
 
@@ -118,7 +128,7 @@ class _SelectDropListState extends State<SelectDropList>
     return GestureDetector(
       child: Row(
         children: <Widget>[
-          Expanded(
+         item.title!=""? Expanded(
             flex: 1,
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 20),
@@ -131,14 +141,14 @@ class _SelectDropListState extends State<SelectDropList>
                   textAlign: TextAlign.start,
                   overflow: TextOverflow.ellipsis),
             ),
-          ),
+          ):SizedBox(),
         ],
       ),
       onTap: () {
-        this.optionItemSelected = item;
+        optionItemSelected = item;
         isShow = false;
         expandController.reverse();
-        widget.onOptionSelected(item);
+        widget.selectDropListModel.onOptionSelected(item);
       },
     );
   }

@@ -1,15 +1,15 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 
 import 'package:flutter/material.dart';
 import 'package:fudextask/constent.dart';
 import 'package:fudextask/core/globalUtils/Styles.dart';
+import 'package:fudextask/features/addProduct/models/CustomTextButtonModels.dart';
 
 class CustomTextButton extends StatelessWidget {
-  String text;
-   CustomTextButton({
-    Key? key,
-    required this.text,
-  }) : super(key: key);
+  final CustomTextButtonModels customTextButtonModels;
+  const CustomTextButton({
+    super.key,
+    required this.customTextButtonModels,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,19 +21,11 @@ class CustomTextButton extends StatelessWidget {
               backgroundColor: PRIMARY,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10))),
-          onPressed: () {
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(
-            //     builder: (context) => Introductionscreen(),
-            //   ),
-            // );
-          },
-          child:  Text(
-          text,
+          onPressed: customTextButtonModels.callback,
+          child: Text(
+            customTextButtonModels.text,
             style: Styles.textNormalWhite16(),
           )),
     );
   }
 }
-

@@ -6,7 +6,7 @@ class Styles {
   static TextStyle textNormal18() {
     return TextStyle(
       color: Color(0xFF010001),
-      fontSize:getResponsiveFontSize(fontSize:18),
+      fontSize:18,
       fontFamily: 'Cairo',
       fontWeight: FontWeight.w400,
     );
@@ -15,7 +15,7 @@ class Styles {
   static TextStyle textNormal16() {
     return TextStyle(
       color: Color(0xFFCECECE),
-      fontSize:getResponsiveFontSize(fontSize:16),
+      fontSize:16,
       fontFamily: 'Tajawal',
       fontWeight: FontWeight.w400,
     );
@@ -24,7 +24,7 @@ class Styles {
   static TextStyle textNormalWhite16() {
     return TextStyle(
       color: Colors.white ,
-      fontSize:getResponsiveFontSize(fontSize:16),
+      fontSize:16,
       fontFamily: 'Tajawal',
       fontWeight: FontWeight.w400,
     );
@@ -33,7 +33,7 @@ class Styles {
   static TextStyle textNormal14() {
     return TextStyle(
       color: Color(0xFF777777),
-      fontSize:getResponsiveFontSize(fontSize:14),
+      fontSize:14,
       fontFamily: 'Cairo',
       fontWeight: FontWeight.w400,
     );
@@ -42,7 +42,7 @@ class Styles {
   static TextStyle textNormal13() {
     return TextStyle(
       color: Color(0xFF010001),
-      fontSize:getResponsiveFontSize(fontSize:13),
+      fontSize:13,
       fontFamily: 'Tajawal',
       fontWeight: FontWeight.w400,
     );
@@ -51,7 +51,7 @@ class Styles {
   static TextStyle textBoldTajawal14() {
     return TextStyle(
       color: Color(0xFF1C5CF2),
-      fontSize:getResponsiveFontSize(fontSize:14),
+      fontSize:14,
       fontFamily: 'Tajawal',
       fontWeight: FontWeight.w700,
     );
@@ -60,7 +60,7 @@ class Styles {
   static TextStyle textNormalTajawal16() {
     return TextStyle(
       color: Color(0xFF353535),
-      fontSize:getResponsiveFontSize(fontSize:16),
+      fontSize:16,
       fontFamily: 'Tajawal',
       fontWeight: FontWeight.w400,
     );
@@ -68,7 +68,7 @@ class Styles {
   static TextStyle textNormalTajawalLight16() {
     return TextStyle(
       color: Color(0xFF666666),
-      fontSize:getResponsiveFontSize(fontSize:16),
+      fontSize:16,
       fontFamily: 'Tajawal',
       fontWeight: FontWeight.w400,
     );
@@ -77,15 +77,14 @@ class Styles {
   static TextStyle textNormalTajawal10() {
     return TextStyle(
       color: Color(0xFF353535),
-      fontSize:getResponsiveFontSize(fontSize:16),
-      fontFamily: 'Tajawal',
+      fontSize:9.62,      fontFamily: 'Tajawal',
       fontWeight: FontWeight.w400,
     );
   }
  static TextStyle textMediumTajawal10() {
     return TextStyle(
       color: Color(0xFFA8A8A8),
-      fontSize:getResponsiveFontSize(fontSize:9.62),
+      fontSize:9.62,
       fontFamily: 'Tajawal',
       fontWeight: FontWeight.w500,
     );
@@ -93,7 +92,7 @@ class Styles {
   static TextStyle textNormalTajawal11() {
     return TextStyle(
       color: Color(0xFF1C5CF2),
-      fontSize:getResponsiveFontSize(fontSize:11),
+      fontSize:11,
       fontFamily: 'Tajawal',
       fontWeight: FontWeight.w400,
     );
@@ -102,7 +101,7 @@ class Styles {
   static TextStyle textNormalTajawal13() {
     return TextStyle(
       color: Color(0xFF353535),
-      fontSize:getResponsiveFontSize(fontSize:13),
+      fontSize:13,
       fontFamily: 'Tajawal',
       fontWeight: FontWeight.w400,
     );

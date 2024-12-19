@@ -7,9 +7,9 @@ import 'package:fudextask/core/globalUtils/Styles.dart';
 
 class CustomSearchBar extends StatefulWidget {
   const CustomSearchBar({
-    Key? key,
+    super.key,
     required this.searchController,
-  }) : super(key: key);
+  });
 
   final TextEditingController searchController;
 

@@ -30,8 +30,6 @@ class _CustomDropSubProductAddScreenState extends State<CustomDropSubProductAddS
     return BlocBuilder<AddProductCubit, AddProductState>(
       
       builder: (context, state) {
-        print(addProductCubit.category);
-        print(state);
 
         if(state is AddProductchoiseDeparment){
           return SelectDropList(

@@ -35,7 +35,6 @@ class _AddFeaturesSectionState extends State<AddFeaturesSection> {
           customSectionModel: CustomSectionModel(
             text: "اضافات",
             widget: CustomDropButtonAddScreenFeatures(voidCallback: () {
-              print("setstate");
               setState(() {
                 
               });

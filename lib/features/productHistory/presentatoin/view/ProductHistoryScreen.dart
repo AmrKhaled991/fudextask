@@ -19,6 +19,7 @@ class ProductHistoryScreen extends StatelessWidget {
     var mediaQuery = MediaQuery.of(context);
     final TextEditingController searchController = TextEditingController();
     return Scaffold(
+      
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: Column(children: [

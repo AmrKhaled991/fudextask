@@ -1,12 +1,21 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:fudextask/core/globalUtils/App_assets.dart';
 import 'package:fudextask/core/globalUtils/Styles.dart';
-import 'package:fudextask/features/productHistory/view/widgets/custom_switcher.dart';
-import 'package:fudextask/features/productHistory/view/widgets/prodct_section.dart';
+import 'package:fudextask/features/productHistory/data/model/Product.dart';
+import 'package:fudextask/features/productHistory/presentatoin/manger/cubit/product_cubit.dart';
+import 'package:fudextask/features/productHistory/presentatoin/view/widgets/custom_switcher.dart';
+import 'package:fudextask/features/productHistory/presentatoin/view/widgets/prodct_section.dart';
 
 class ProdcutCard extends StatelessWidget {
-  const ProdcutCard({super.key});
+  final Product product;
+  const ProdcutCard({
+    Key? key,
+    required this.product,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,16 +43,22 @@ class ProdcutCard extends StatelessWidget {
                 children: [
                   Text('تفعيل المنتج', style: Styles.textNormalTajawal13()),
                   Spacer(),
-                  CustomSwitcher(),
+                  CustomSwitcher(
+                    isActive: product.isActive,
+                    id: product.id,
+                  ),
                   const SizedBox(
                     width: 12,
                   ),
-                  SvgPicture.asset(Assets.imagesTrash),
+                  InkWell(
+                      onTap: () => BlocProvider.of<ProductCubit>(context)
+                          .deleteProduct(product.id),
+                      child: SvgPicture.asset(Assets.imagesTrash)),
                 ],
               ),
             ),
             Divider(),
-            ProdctSection()
+            ProdctSection(product: product,)
           ],
         ),
       ),

@@ -11,7 +11,7 @@ import 'package:fudextask/features/addProduct/view/widgets/custom_dropawn_sized.
 import 'package:fudextask/features/addProduct/view/widgets/custom_product_status.dart';
 import 'package:fudextask/features/addProduct/view/widgets/cutom_product_text_field.dart';
 import 'package:fudextask/features/addProduct/view/widgets/prodcut_image_section.dart';
-import 'package:fudextask/features/productHistory/view/widgets/custom_drop_button.dart';
+import 'package:fudextask/features/productHistory/presentatoin/view/widgets/custom_drop_button.dart';
 
 class CustomEditScreenScrollView extends StatelessWidget {
   CustomEditScreenScrollView({

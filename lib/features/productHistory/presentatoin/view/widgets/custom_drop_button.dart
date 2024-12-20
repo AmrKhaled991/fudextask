@@ -1,9 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:fudextask/core/globalModles/DropListModel%20.dart';
 import 'package:fudextask/core/globalModles/SelectDropListModel.dart';
 import 'package:fudextask/core/globalWidgets/SelectDropList%20.dart';
+import 'package:fudextask/features/productHistory/presentatoin/manger/cubit/product_cubit.dart';
 
 class CustomDropButton extends StatefulWidget {
   final DropDownTheme downTheme;
@@ -30,7 +32,10 @@ class _CustomDropButtonState extends State<CustomDropButton> {
         null,
         SelectDropListModel(
           onOptionSelected: (optionItem) {
-            setState(() {});
+            BlocProvider.of<ProductCubit>(context).choiseDepartment(optionItem.title);
+            setState(() {
+              
+            });
           },
           dropDownTheme: widget.downTheme,
           dropListModel: dropListModel,

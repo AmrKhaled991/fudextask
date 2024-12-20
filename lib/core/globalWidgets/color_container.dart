@@ -13,17 +13,13 @@ class ColorContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-          padding: const EdgeInsets.only(right: 5.0),
-          child: Container(
-            width:colorContainerModle.width,height: colorContainerModle.hieght,
-            decoration: BoxDecoration(
-              color: colorContainerModle.color,
-              borderRadius: BorderRadius.circular(5),
-            ),
-            padding: EdgeInsets.all(5),
-          ),
-          
-        );
+    return Container(
+      width:colorContainerModle.width,height: colorContainerModle.hieght,
+      decoration: BoxDecoration(
+        color: colorContainerModle.color,
+        borderRadius: BorderRadius.circular(5),
+      ),
+      padding: EdgeInsets.all(5),
+    );
   }
 }

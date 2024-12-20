@@ -7,7 +7,7 @@ import 'package:fudextask/core/globalModles/SelectDropListModel.dart';
 import 'package:fudextask/core/globalUtils/Styles.dart';
 
 class SelectDropList extends StatefulWidget {
- final SelectDropListModel selectDropListModel;
+  final SelectDropListModel selectDropListModel;
 
   const SelectDropList(
     Key? key,
@@ -15,8 +15,8 @@ class SelectDropList extends StatefulWidget {
   ) : super(key: key);
 
   @override
-  _SelectDropListState createState() =>
-      _SelectDropListState(selectDropListModel.itemSelected, selectDropListModel.dropListModel);
+  _SelectDropListState createState() => _SelectDropListState(
+      selectDropListModel.itemSelected, selectDropListModel.dropListModel);
 }
 
 class _SelectDropListState extends State<SelectDropList>
@@ -69,13 +69,12 @@ class _SelectDropListState extends State<SelectDropList>
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 9),
             decoration: BoxDecoration(
-              border: Border.all(
-                  width: 1,color: const Color(0xFFDBDBDB)
-              ),
+              border: Border.all(width: 1, color: const Color(0xFFDBDBDB)),
               borderRadius: BorderRadius.circular(20.0),
-              color:  widget.selectDropListModel.dropDownTheme == DropDownTheme.ProductHistoryScreen
-                          ? Colors.white
-                          : Color(0xFFF8F8F8),
+              color: widget.selectDropListModel.dropDownTheme ==
+                      DropDownTheme.ProductHistoryScreen
+                  ? Colors.white
+                  : Color(0xFFF8F8F8),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.max,
@@ -83,7 +82,10 @@ class _SelectDropListState extends State<SelectDropList>
               children: <Widget>[
                 Text(
                   optionItemSelected.title,
-                  style:widget.selectDropListModel.dropDownTheme == DropDownTheme.ProductHistoryScreen ?Styles.textNormal14():Styles.textNormalTajawal16(),
+                  style: widget.selectDropListModel.dropDownTheme ==
+                          DropDownTheme.ProductHistoryScreen
+                      ? Styles.textNormal14()
+                      : Styles.textNormalTajawal16(),
                 ),
                 Spacer(),
                 Icon(
@@ -106,9 +108,10 @@ class _SelectDropListState extends State<SelectDropList>
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(20),
                       bottomRight: Radius.circular(20)),
-                  color:   widget.selectDropListModel.dropDownTheme == DropDownTheme.ProductHistoryScreen
-                          ? Colors.white
-                          : Color(0xFFF8F8F8),
+                  color: widget.selectDropListModel.dropDownTheme ==
+                          DropDownTheme.ProductHistoryScreen
+                      ? Colors.white
+                      : Color(0xFFF8F8F8),
                   boxShadow: [customShadow()],
                 ),
                 child: _buildDropListOptions(
@@ -120,7 +123,10 @@ class _SelectDropListState extends State<SelectDropList>
 
   Column _buildDropListOptions(List<OptionItem> items, BuildContext context) {
     return Column(
-      children: items.map((item) =>  _buildSubMenu(item, context)).toList(),
+      children: items
+          .map((item) =>
+              item == items.first ? SizedBox() : _buildSubMenu(item, context))
+          .toList(),
     );
   }
 
@@ -128,7 +134,7 @@ class _SelectDropListState extends State<SelectDropList>
     return GestureDetector(
       child: Row(
         children: <Widget>[
-         item.title!=""? Expanded(
+          Expanded(
             flex: 1,
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 20),
@@ -141,7 +147,7 @@ class _SelectDropListState extends State<SelectDropList>
                   textAlign: TextAlign.start,
                   overflow: TextOverflow.ellipsis),
             ),
-          ):SizedBox(),
+          ),
         ],
       ),
       onTap: () {

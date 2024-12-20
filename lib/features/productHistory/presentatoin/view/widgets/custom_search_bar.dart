@@ -1,9 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fudextask/core/globalUtils/App_assets.dart';
 import 'package:fudextask/core/globalUtils/Styles.dart';
+import 'package:fudextask/features/productHistory/presentatoin/manger/cubit/product_cubit.dart';
 
 class CustomSearchBar extends StatefulWidget {
   const CustomSearchBar({
@@ -21,21 +23,21 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      controller: widget.searchController, 
+      controller: widget.searchController,
       decoration: InputDecoration(
-        isDense: true, 
-        contentPadding: EdgeInsets.symmetric(vertical: 8,horizontal: 12), 
+        isDense: true,
+        contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
         hintText: 'بحث',
         hintStyle: Styles.textNormal14(),
         prefixIcon: Padding(
-          padding: const EdgeInsets.only(right: 12,left: 4),
+          padding: const EdgeInsets.only(right: 12, left: 4),
           child: SvgPicture.asset(
             Assets.imagesSearch,
             fit: BoxFit.scaleDown,
           ),
         ),
         prefixIconConstraints: BoxConstraints(
-          minWidth: 4, 
+          minWidth: 4,
           minHeight: 4,
         ),
         suffixIcon: widget.searchController.text.isNotEmpty
@@ -45,8 +47,8 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
                   fit: BoxFit.scaleDown,
                 ),
                 onPressed: () {
-                  widget.searchController.clear(); 
-                  setState(() {}); 
+                  widget.searchController.clear();
+                  setState(() {});
                 },
               )
             : null,
@@ -64,7 +66,9 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
         ),
       ),
       onChanged: (text) {
-        setState(() {}); 
+        BlocProvider.of<ProductCubit>(context).searchProducts(text);
+        // setState(() {
+        // });
       },
     );
   }

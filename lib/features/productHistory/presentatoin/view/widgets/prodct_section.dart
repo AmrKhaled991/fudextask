@@ -1,11 +1,15 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:fudextask/core/globalUtils/App_assets.dart';
-import 'package:fudextask/features/productHistory/view/widgets/product_info.dart';
+import 'package:fudextask/features/productHistory/data/model/Product.dart';
+import 'package:fudextask/features/productHistory/presentatoin/view/widgets/product_info.dart';
 
 class ProdctSection extends StatelessWidget {
+    final Product product;
+
   const ProdctSection({
-    super.key,
-  });
+    Key? key,
+    required this.product,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +21,7 @@ class ProdctSection extends StatelessWidget {
                Expanded(
                 flex: 3,
                  child: Image.asset(
-                    Assets.imagesEllipse,
+                   product.images.first,
                     fit: BoxFit.cover ,
                   ),
                ),
@@ -26,7 +30,7 @@ class ProdctSection extends StatelessWidget {
               ),
               Expanded(
                 flex: 5,
-                child: const ProductInfo()),
+                child:  ProductInfo(product: product)),
               const SizedBox(
                 width: 16,
               ),

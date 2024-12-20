@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fudextask/features/addProduct/view/EditProudctScreen.dart';
-import 'package:fudextask/features/productHistory/view/ProductHistoryScreen.dart';
+import 'package:fudextask/features/productHistory/presentatoin/manger/cubit/product_cubit.dart';
+import 'package:fudextask/features/productHistory/presentatoin/view/ProductHistoryScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +20,9 @@ class MyApp extends StatelessWidget {
       home: Directionality(
         textDirection: TextDirection.rtl,
         child:
-         const EditProudctScreen()),
+         BlocProvider(
+          create: (context) => ProductCubit(),
+         child: const EditProudctScreen())),
     );
   }
 }

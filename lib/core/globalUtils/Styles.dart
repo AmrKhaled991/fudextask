@@ -89,6 +89,15 @@ class Styles {
       fontWeight: FontWeight.w500,
     );
   }
+
+   static TextStyle textMediumTajawalBlack10() {
+    return TextStyle(
+      color: Color(0xFF353535),
+      fontSize:9.62,
+      fontFamily: 'Tajawal',
+      fontWeight: FontWeight.w500,
+    );
+  }
   static TextStyle textNormalTajawal11() {
     return TextStyle(
       color: Color(0xFF1C5CF2),

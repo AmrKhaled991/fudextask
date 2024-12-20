@@ -1,10 +1,12 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fudextask/core/globalModles/CustomTextButtonModels.dart';
-import 'package:fudextask/core/globalModles/DropListModel%20.dart';
 import 'package:fudextask/core/globalWidgets/custom_appbar.dart';
 import 'package:fudextask/core/globalWidgets/custom_floating_action_button.dart';
 import 'package:fudextask/features/addProduct/models/CustomTextButtonModels.dart';
+import 'package:fudextask/features/addProduct/view/AddProdcutScreen.dart';
+import 'package:fudextask/features/addProduct/view/manger/cubit/add_product_cubit.dart';
 import 'package:fudextask/features/productHistory/presentatoin/view/widgets/custom_drop_button.dart';
 import 'package:fudextask/features/productHistory/presentatoin/view/widgets/custom_search_bar.dart';
 import 'package:fudextask/features/productHistory/presentatoin/view/widgets/custom_slivers_products_card.dart';
@@ -45,7 +47,7 @@ class ProductHistoryScreen extends StatelessWidget {
                     height: 15,
                   ),
                 ),
-                SliverToBoxAdapter(child: CustomDropButton(downTheme: DropDownTheme.ProductHistoryScreen,)),
+                SliverToBoxAdapter(child: CustomDropButtonhHistroyScreen()),
                 const SliverToBoxAdapter(
                   child: SizedBox(
                     height: 15,
@@ -62,14 +64,20 @@ class ProductHistoryScreen extends StatelessWidget {
           ),
         ),
       ]),
-      floatingActionButton: Padding(
-        padding: EdgeInsets.only(
-          bottom: mediaQuery.viewInsets.bottom - mediaQuery.viewPadding.bottom,
-        ),
-        child: CustomFloatingActionButton(
-          customTextButtonModels:
-              CustomTextButtonModels(text: 'أضافة منتج', callback: (){}),
-        ),
+      floatingActionButton: CustomFloatingActionButton(
+        customTextButtonModels: CustomTextButtonModels(
+            text: 'أضافة منتج',
+            callback: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => BlocProvider(
+                        create: (context) => AddProductCubit(),
+                        child: const Directionality(
+                          textDirection: TextDirection.rtl,
+                          child:  AddProdcutScreen()))),
+              );
+            }),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );

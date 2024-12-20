@@ -7,18 +7,16 @@ import 'package:fudextask/core/globalModles/SelectDropListModel.dart';
 import 'package:fudextask/core/globalWidgets/SelectDropList%20.dart';
 import 'package:fudextask/features/productHistory/presentatoin/manger/cubit/product_cubit.dart';
 
-class CustomDropButton extends StatefulWidget {
-  final DropDownTheme downTheme;
-  const CustomDropButton({
+class CustomDropButtonhHistroyScreen extends StatefulWidget {
+  const CustomDropButtonhHistroyScreen({
     super.key,
-    required this.downTheme,
   });
 
   @override
-  State<CustomDropButton> createState() => _CustomDropButtonState();
+  State<CustomDropButtonhHistroyScreen> createState() => _CustomDropButtonhHistroyScreenState();
 }
 
-class _CustomDropButtonState extends State<CustomDropButton> {
+class _CustomDropButtonhHistroyScreenState extends State<CustomDropButtonhHistroyScreen> {
   DropListModel dropListModel = DropListModel([
     OptionItem(id: "1", title: "القسم"),
     OptionItem(id: "1", title: "شنط"),
@@ -34,10 +32,9 @@ class _CustomDropButtonState extends State<CustomDropButton> {
           onOptionSelected: (optionItem) {
             BlocProvider.of<ProductCubit>(context).choiseDepartment(optionItem.title);
             setState(() {
-              
             });
           },
-          dropDownTheme: widget.downTheme,
+          dropDownTheme: DropDownTheme.ProductHistoryScreen,
           dropListModel: dropListModel,
           itemSelected: dropListModel.listOptionItems.first,
         ));

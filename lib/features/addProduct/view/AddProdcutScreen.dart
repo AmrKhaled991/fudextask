@@ -5,15 +5,17 @@ import 'package:fudextask/core/globalWidgets/custom_floating_action_button.dart'
 import 'package:fudextask/features/addProduct/models/CustomTextButtonModels.dart';
 import 'package:fudextask/features/addProduct/view/widgets/custom_edit_screen_scroll_view.dart';
 
-class EditProudctScreen extends StatelessWidget {
-  const EditProudctScreen({super.key});
+class AddProdcutScreen extends StatelessWidget {
+  const AddProdcutScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     var mediaQuery = MediaQuery.of(context);
     final TextEditingController productNameController = TextEditingController();
-    final TextEditingController productPriceController = TextEditingController();
-    final TextEditingController productDisceController = TextEditingController();
+    final TextEditingController productPriceController =
+        TextEditingController();
+    final TextEditingController productDisceController =
+        TextEditingController();
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -22,21 +24,20 @@ class EditProudctScreen extends StatelessWidget {
         CustomAppbar(
             customAppbarModel: CustomAppbarModel(
           text: 'تعديل',
-          callback: () {},
+          callback: () {
+              Navigator.pop(context);
+          },
         )),
         Expanded(
             child: CustomEditScreenScrollView(
-                productNameController: productNameController,
-                productPriceController: productPriceController,productDisceController: productDisceController,))
+          productNameController: productNameController,
+          productPriceController: productPriceController,
+          productDisceController: productDisceController,
+        ))
       ]),
-      floatingActionButton: Padding(  
-        padding: EdgeInsets.only(
-          bottom: mediaQuery.viewInsets.bottom - mediaQuery.viewPadding.bottom,
-        ),
-        child: CustomFloatingActionButton(
-          customTextButtonModels:
-              CustomTextButtonModels(text: 'حفظ', callback: () {}),
-        ),
+      floatingActionButton: CustomFloatingActionButton(
+        customTextButtonModels:
+            CustomTextButtonModels(text: 'حفظ', callback: () {}),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );

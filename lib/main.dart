@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fudextask/features/addProduct/view/EditProudctScreen.dart';
 import 'package:fudextask/features/productHistory/presentatoin/manger/cubit/product_cubit.dart';
 import 'package:fudextask/features/productHistory/presentatoin/view/ProductHistoryScreen.dart';
 
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
         child:
          BlocProvider(
           create: (context) => ProductCubit(),
-         child: const EditProudctScreen())),
+         child: const ProductHistoryScreen())),
     );
   }
 }

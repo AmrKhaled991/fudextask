@@ -1,10 +1,12 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fudextask/core/globalModles/DropListModel%20.dart';
 import 'package:fudextask/core/globalModles/SelectDropListModel.dart';
 import 'package:fudextask/core/globalUtils/Styles.dart';
 import 'package:fudextask/core/globalWidgets/SelectDropList%20.dart';
+import 'package:fudextask/features/addProduct/view/manger/cubit/add_product_cubit.dart';
 import 'package:fudextask/features/addProduct/view/widgets/custom_selected_container.dart';
 
 class CustomDropawnSizes extends StatefulWidget {
@@ -25,9 +27,9 @@ class _CustomDropawnSizesState extends State<CustomDropawnSizes> {
 
   @override
   Widget build(BuildContext context) {
+    final addBlock = BlocProvider.of<AddProductCubit>(context);
     return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
@@ -37,6 +39,7 @@ class _CustomDropawnSizesState extends State<CustomDropawnSizes> {
                   null,
                   SelectDropListModel(
                     onOptionSelected: (optionItem) {
+                      addBlock.addSizesFunction(optionItem.title);
                       setState(() {});
                     },
                     dropDownTheme: DropDownTheme.EditProudctScreen,
@@ -54,10 +57,15 @@ class _CustomDropawnSizesState extends State<CustomDropawnSizes> {
             spacing: 7,
             runSpacing: 12,
             children: List.generate(
-                dropListModel.listOptionItems.length,
+                addBlock.sizes.length,
                 (index) => CustomSelectedContainer(
-                        widget: Text(
-                      dropListModel.listOptionItems[index].title,
+                    voidCallbackAction: () {
+                       addBlock.sizes.removeWhere(
+                          (element) => element == addBlock.sizes[index]);
+                      setState(() {});
+                    },
+                    widget: Text(
+                      addBlock.sizes[index],
                       style: Styles.textNormalTajawal16(),
                     ))))
       ],

@@ -2,12 +2,18 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:fudextask/core/globalUtils/App_assets.dart';
 
 class CustomSelectedContainer extends StatelessWidget {
   final Widget widget;
+  final VoidCallback voidCallbackAction;
 
-  const CustomSelectedContainer({super.key, required this.widget});
+  const CustomSelectedContainer({
+    Key? key,
+    required this.widget,
+    required this.voidCallbackAction,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +34,7 @@ class CustomSelectedContainer extends StatelessWidget {
             width: 9,
           ),
           InkWell(
-            onTap: () {},
+            onTap: voidCallbackAction,
             child: SvgPicture.asset(
               Assets.imagesTrash,
               width: 11,

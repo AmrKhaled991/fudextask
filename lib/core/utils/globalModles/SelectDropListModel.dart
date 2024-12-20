@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
-import 'package:fudextask/core/globalModles/DropListModel%20.dart';
+import 'package:fudextask/core/utils/globalModles/DropListModel%20.dart';
 
 class SelectDropListModel {
    final OptionItem itemSelected;

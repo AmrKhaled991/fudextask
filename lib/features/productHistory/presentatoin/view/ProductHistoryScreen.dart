@@ -1,9 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fudextask/core/globalModles/CustomTextButtonModels.dart';
-import 'package:fudextask/core/globalWidgets/custom_appbar.dart';
-import 'package:fudextask/core/globalWidgets/custom_floating_action_button.dart';
+import 'package:fudextask/core/utils/globalModles/CustomTextButtonModels.dart';
+import 'package:fudextask/core/utils/globalWidgets/custom_appbar.dart';
+import 'package:fudextask/core/utils/globalWidgets/custom_floating_action_button.dart';
 import 'package:fudextask/features/addProduct/models/CustomTextButtonModels.dart';
 import 'package:fudextask/features/addProduct/presentaion/view/AddProdcutScreen.dart';
 import 'package:fudextask/features/addProduct/presentaion/cubit/add_product_cubit.dart';

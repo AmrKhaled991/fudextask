@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:fudextask/core/globalUtils/App_assets.dart';
+import 'package:fudextask/core/utils/globalUtils/App_assets.dart';
 import 'package:fudextask/features/addProduct/models/AddImageButtonModel.dart';
 
 class AddImageButton extends StatelessWidget {

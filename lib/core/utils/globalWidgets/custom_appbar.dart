@@ -3,9 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:fudextask/core/globalModles/CustomTextButtonModels.dart';
-import 'package:fudextask/core/globalUtils/App_assets.dart';
-import 'package:fudextask/core/globalUtils/Styles.dart';
+import 'package:fudextask/core/utils/globalModles/CustomTextButtonModels.dart';
+import 'package:fudextask/core/utils/globalUtils/App_assets.dart';
+import 'package:fudextask/core/utils/globalUtils/Styles.dart';
 
 class CustomAppbar extends StatelessWidget {
   final CustomAppbarModel customAppbarModel;

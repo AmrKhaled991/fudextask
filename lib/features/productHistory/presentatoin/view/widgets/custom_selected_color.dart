@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fudextask/constent.dart';
-import 'package:fudextask/core/globalModles/ColorContainerModle.dart';
-import 'package:fudextask/core/globalWidgets/color_container.dart';
+import 'package:fudextask/core/utils/globalModles/ColorContainerModle.dart';
+import 'package:fudextask/core/utils/globalWidgets/color_container.dart';
 
 class CustomSelectedColorContaioer extends StatelessWidget {
   final Color color;

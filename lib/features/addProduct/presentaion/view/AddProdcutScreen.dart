@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fudextask/core/globalModles/CustomTextButtonModels.dart';
-import 'package:fudextask/core/globalWidgets/custom_appbar.dart';
-import 'package:fudextask/core/globalWidgets/custom_floating_action_button.dart';
+import 'package:fudextask/core/utils/globalModles/CustomTextButtonModels.dart';
+import 'package:fudextask/core/utils/globalWidgets/custom_appbar.dart';
+import 'package:fudextask/core/utils/globalWidgets/custom_floating_action_button.dart';
 import 'package:fudextask/features/addProduct/models/CustomTextButtonModels.dart';
 import 'package:fudextask/features/addProduct/presentaion/view/widgets/custom_edit_screen_scroll_view.dart';
 

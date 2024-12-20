@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:fudextask/constent.dart';
-import 'package:fudextask/core/globalUtils/Styles.dart';
+import 'package:fudextask/core/utils/globalUtils/Styles.dart';
 
 class CustomSelectedSizedContaioer extends StatelessWidget {
   final String text;

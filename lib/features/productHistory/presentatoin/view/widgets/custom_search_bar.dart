@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fudextask/core/globalUtils/App_assets.dart';
-import 'package:fudextask/core/globalUtils/Styles.dart';
+import 'package:fudextask/core/utils/globalUtils/App_assets.dart';
+import 'package:fudextask/core/utils/globalUtils/Styles.dart';
 import 'package:fudextask/features/productHistory/presentatoin/manger/cubit/product_cubit.dart';
 
 class CustomSearchBar extends StatefulWidget {

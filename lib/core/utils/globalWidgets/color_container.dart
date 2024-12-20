@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'package:fudextask/core/globalModles/ColorContainerModle.dart';
+import 'package:fudextask/core/utils/globalModles/ColorContainerModle.dart';
 
 class ColorContainer extends StatelessWidget {
  final ColorContainerModle colorContainerModle;

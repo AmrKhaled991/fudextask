@@ -2,12 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fudextask/core/globalModles/ColorContainerModle.dart';
-import 'package:fudextask/core/globalModles/DropListModel%20.dart';
-import 'package:fudextask/core/globalModles/SelectDropListModel.dart';
-import 'package:fudextask/core/globalUtils/colors.dart';
-import 'package:fudextask/core/globalWidgets/SelectDropList%20.dart';
-import 'package:fudextask/core/globalWidgets/color_container.dart';
+import 'package:fudextask/core/utils/globalModles/ColorContainerModle.dart';
+import 'package:fudextask/core/utils/globalModles/DropListModel%20.dart';
+import 'package:fudextask/core/utils/globalModles/SelectDropListModel.dart';
+import 'package:fudextask/core/utils/globalUtils/colors.dart';
+import 'package:fudextask/core/utils/globalWidgets/SelectDropList%20.dart';
+import 'package:fudextask/core/utils/globalWidgets/color_container.dart';
 import 'package:fudextask/features/addProduct/presentaion/cubit/add_product_cubit.dart';
 import 'package:fudextask/features/addProduct/presentaion/view/widgets/custom_selected_container.dart';
 

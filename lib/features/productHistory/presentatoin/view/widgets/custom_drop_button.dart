@@ -2,9 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:fudextask/core/globalModles/DropListModel%20.dart';
-import 'package:fudextask/core/globalModles/SelectDropListModel.dart';
-import 'package:fudextask/core/globalWidgets/SelectDropList%20.dart';
+import 'package:fudextask/core/utils/globalModles/DropListModel%20.dart';
+import 'package:fudextask/core/utils/globalModles/SelectDropListModel.dart';
+import 'package:fudextask/core/utils/globalWidgets/SelectDropList%20.dart';
 import 'package:fudextask/features/productHistory/presentatoin/manger/cubit/product_cubit.dart';
 
 class CustomDropButtonhHistroyScreen extends StatefulWidget {

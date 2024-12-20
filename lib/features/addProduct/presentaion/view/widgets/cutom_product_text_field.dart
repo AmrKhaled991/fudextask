@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:fudextask/features/addProduct/models/CutomProductTextFieldModle.dart';
-import 'package:fudextask/features/addProduct/view/manger/cubit/add_product_cubit.dart';
+import 'package:fudextask/features/addProduct/presentaion/cubit/add_product_cubit.dart';
 
 class CutomProductTextField extends StatelessWidget {
   const CutomProductTextField({

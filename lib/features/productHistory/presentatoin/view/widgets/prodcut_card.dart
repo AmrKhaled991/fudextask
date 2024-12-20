@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:fudextask/core/globalUtils/App_assets.dart';
 import 'package:fudextask/core/globalUtils/Styles.dart';
-import 'package:fudextask/features/productHistory/data/model/Product.dart';
+import 'package:fudextask/features/productHistory/model/Product.dart';
 import 'package:fudextask/features/productHistory/presentatoin/manger/cubit/product_cubit.dart';
 import 'package:fudextask/features/productHistory/presentatoin/view/widgets/custom_switcher.dart';
 import 'package:fudextask/features/productHistory/presentatoin/view/widgets/prodct_section.dart';

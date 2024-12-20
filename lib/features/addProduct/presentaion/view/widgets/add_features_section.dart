@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fudextask/features/addProduct/models/CustomSectionModel.dart';
 import 'package:fudextask/features/addProduct/models/CutomProductTextFieldModle.dart';
-import 'package:fudextask/features/addProduct/view/manger/cubit/add_product_cubit.dart';
-import 'package:fudextask/features/addProduct/view/widgets/CustomDropawnColor.dart';
-import 'package:fudextask/features/addProduct/view/widgets/CustomSection.dart';
-import 'package:fudextask/features/addProduct/view/widgets/custom_drop_button_add_screen_features.dart';
-import 'package:fudextask/features/addProduct/view/widgets/custom_dropawn_key_words.dart';
-import 'package:fudextask/features/addProduct/view/widgets/custom_dropawn_sized.dart';
-import 'package:fudextask/features/addProduct/view/widgets/custom_product_status.dart';
-import 'package:fudextask/features/addProduct/view/widgets/cutom_product_text_field.dart';
+import 'package:fudextask/features/addProduct/presentaion/cubit/add_product_cubit.dart';
+import 'package:fudextask/features/addProduct/presentaion/view/widgets/CustomDropawnColor.dart';
+import 'package:fudextask/features/addProduct/presentaion/view/widgets/CustomSection.dart';
+import 'package:fudextask/features/addProduct/presentaion/view/widgets/custom_drop_button_add_screen_features.dart';
+import 'package:fudextask/features/addProduct/presentaion/view/widgets/custom_dropawn_key_words.dart';
+import 'package:fudextask/features/addProduct/presentaion/view/widgets/custom_dropawn_sized.dart';
+import 'package:fudextask/features/addProduct/presentaion/view/widgets/custom_product_status.dart';
+import 'package:fudextask/features/addProduct/presentaion/view/widgets/cutom_product_text_field.dart';
 
 class AddFeaturesSection extends StatefulWidget {
   const AddFeaturesSection({

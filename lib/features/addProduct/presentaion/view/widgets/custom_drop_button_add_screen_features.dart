@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fudextask/core/globalModles/DropListModel%20.dart';
 import 'package:fudextask/core/globalModles/SelectDropListModel.dart';
 import 'package:fudextask/core/globalWidgets/SelectDropList%20.dart';
-import 'package:fudextask/features/addProduct/view/manger/cubit/add_product_cubit.dart';
+import 'package:fudextask/features/addProduct/presentaion/cubit/add_product_cubit.dart';
 
 class CustomDropButtonAddScreenFeatures extends StatefulWidget {
   final VoidCallback voidCallback;

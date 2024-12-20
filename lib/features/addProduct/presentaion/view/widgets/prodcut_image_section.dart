@@ -1,13 +1,11 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fudextask/features/addProduct/view/widgets/image_list_display.dart';
-import 'package:fudextask/features/addProduct/view/widgets/main_image_display.dart';
+import 'package:fudextask/features/addProduct/presentaion/view/widgets/image_list_display.dart';
+import 'package:fudextask/features/addProduct/presentaion/view/widgets/main_image_display.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:fudextask/core/globalUtils/App_assets.dart';
 import 'package:fudextask/core/globalUtils/Styles.dart';
-import 'package:fudextask/features/addProduct/models/AddImageButtonModel.dart';
-import 'package:fudextask/features/addProduct/view/widgets/small_button_add_image.dart';
 
 class ProductImageSection extends StatefulWidget {
   const ProductImageSection({super.key});

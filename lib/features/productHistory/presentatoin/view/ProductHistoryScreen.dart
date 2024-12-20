@@ -5,8 +5,8 @@ import 'package:fudextask/core/globalModles/CustomTextButtonModels.dart';
 import 'package:fudextask/core/globalWidgets/custom_appbar.dart';
 import 'package:fudextask/core/globalWidgets/custom_floating_action_button.dart';
 import 'package:fudextask/features/addProduct/models/CustomTextButtonModels.dart';
-import 'package:fudextask/features/addProduct/view/AddProdcutScreen.dart';
-import 'package:fudextask/features/addProduct/view/manger/cubit/add_product_cubit.dart';
+import 'package:fudextask/features/addProduct/presentaion/view/AddProdcutScreen.dart';
+import 'package:fudextask/features/addProduct/presentaion/cubit/add_product_cubit.dart';
 import 'package:fudextask/features/productHistory/presentatoin/view/widgets/custom_drop_button.dart';
 import 'package:fudextask/features/productHistory/presentatoin/view/widgets/custom_search_bar.dart';
 import 'package:fudextask/features/productHistory/presentatoin/view/widgets/custom_slivers_products_card.dart';
@@ -16,7 +16,6 @@ class ProductHistoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var mediaQuery = MediaQuery.of(context);
     final TextEditingController searchController = TextEditingController();
     return Scaffold(
       

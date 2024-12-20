@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
 import 'package:flutter/material.dart';
-import 'package:fudextask/features/addProduct/view/widgets/add_features_section.dart';
-import 'package:fudextask/features/addProduct/view/widgets/add_screen_static_sectoin.dart';
+import 'package:fudextask/features/addProduct/presentaion/view/widgets/add_features_section.dart';
+import 'package:fudextask/features/addProduct/presentaion/view/widgets/add_screen_static_sectoin.dart';
 
 class CustomEditScreenScrollView extends StatelessWidget {
   CustomEditScreenScrollView({

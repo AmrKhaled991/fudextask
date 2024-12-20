@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:fudextask/core/globalUtils/Styles.dart';
-import 'package:fudextask/features/productHistory/data/model/Product.dart';
+import 'package:fudextask/features/productHistory/model/Product.dart';
 import 'package:fudextask/features/productHistory/presentatoin/view/widgets/prdcut_avilable_color.dart';
 import 'package:fudextask/features/productHistory/presentatoin/view/widgets/prdcut_avilable_size.dart';
 

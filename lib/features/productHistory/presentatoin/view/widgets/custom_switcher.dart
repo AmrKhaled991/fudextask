@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:fudextask/constent.dart';
 import 'package:fudextask/features/productHistory/presentatoin/manger/cubit/product_cubit.dart';
-import 'package:fudextask/features/productHistory/presentatoin/view/widgets/prodcut_card.dart';
 
 class CustomSwitcher extends StatefulWidget {
    final bool isActive;
